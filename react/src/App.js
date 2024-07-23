@@ -4,8 +4,8 @@ import { VideoSDKMeeting } from "@videosdk.live/rtc-js-prebuilt";
 export default function App() {
   useEffect(() => {
     const apiKey = process.env.REACT_APP_VIDEOSDK_API_KEY;
-    const meetingId = "milkyway";
-    const name = "Demo User";
+    const meetingId = "alphatech";
+    const name = "AlphaTech";
 
     const config = {
       name: name,
@@ -15,7 +15,7 @@ export default function App() {
       region: "sg001", // region for new meeting
 
       containerId: null,
-      redirectOnLeave: "https://www.videosdk.live/",
+      redirectOnLeave: null,
 
       micEnabled: true,
       webcamEnabled: true,
@@ -30,8 +30,8 @@ export default function App() {
       raiseHandEnabled: true,
 
       recording: {
-        autoStart: true, // auto start recording on participant joined
-        enabled: true,
+        autoStart: false, // auto start recording on participant joined
+        enabled: false,
         webhookUrl: "https://www.videosdk.live/callback",
         awsDirPath: `/meeting-recordings/${meetingId}/`, // automatically save recording in this s3 path
       },
@@ -50,8 +50,8 @@ export default function App() {
       branding: {
         enabled: true,
         logoURL:
-          "https://static.zujonow.com/videosdk.live/videosdk_logo_circle_big.png",
-        name: "Prebuilt",
+          "https://alpha-tech.asia/wp-content/uploads/2022/12/logo.png",
+        name: "Alpha Tech",
         poweredBy: false,
       },
 
@@ -71,7 +71,7 @@ export default function App() {
 
       joinScreen: {
         visible: true, // Show the join screen ?
-        title: "Daily scrum", // Meeting title
+        title: "BroadCast", // Meeting title
         meetingUrl: window.location.href, // Meeting joining url
       },
 
@@ -79,8 +79,8 @@ export default function App() {
         // visible when redirect on leave not provieded
         actionButton: {
           // optional action button
-          label: "Video SDK Live", // action button label
-          href: "https://videosdk.live/", // action button href
+          label: "Alpha Tech", // action button label
+          href: "https://zoom.alpha-tech.asia/", // action button href
         },
       },
 
